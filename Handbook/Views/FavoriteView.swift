@@ -41,6 +41,7 @@ struct FavoriteView: View {
                             Text(fav.content ?? "")
                                 .contextMenu {
                                     Button {
+                                        SpotlightDeIndex(id: fav.id!)
                                         moc.delete(fav)
                                         try? moc.save()
                                     } label: {

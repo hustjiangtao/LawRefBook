@@ -120,6 +120,8 @@ class LawProvider: ObservableObject{
             fav.content = line
             fav.lawId = uuid
             try? moc.save()
+
+            SpotlightIndex(id: fav.id!, lawID: uuid, content: line)
         }
     }
 
